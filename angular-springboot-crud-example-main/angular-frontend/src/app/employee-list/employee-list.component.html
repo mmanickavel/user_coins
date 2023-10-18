@@ -1,0 +1,42 @@
+<div class = "row">
+    <h2> Add Coins</h2>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" minlength="3" class="form-control" id="name" placeholder="Enter name" [(ngModel)]="createEmployee.name"
+                            name="name">
+      </div>
+    <div class="form-group">
+      <label for="inputCoins1">Coins</label>
+      <input type="number" class="form-control"  id="inputCoins1" placeholder="Enter coins"
+       [(ngModel)]="createEmployee.coins" name="coins">
+    </div>
+    <div style=margin-bottom:20px;></div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+<div class = "row" style=margin-top:20px;>
+    <h2> Employee List</h2>
+</div>
+
+<table class = "table table-striped table-bordered" style="overflow:auto">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Coins </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees" >
+            <td> {{ employee.name }} </td>
+            <td> {{ employee.coins }} </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
